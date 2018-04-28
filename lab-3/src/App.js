@@ -40,6 +40,7 @@ class App extends Component {
   }
   render() {
     let appStyle = {
+      background:'1px solid black',
       display: 'flex', 
       justifyContent: 'center',
       textAlign:'center'
@@ -59,7 +60,7 @@ class App extends Component {
             <Header />
           </div>
           <div style={divStyle}>
-            <div><h4>Students</h4></div>
+            <div style={{ background: "yellow"}}><h4>Students</h4></div>
             <div>
               <ul>
                   {this.state.students.map((std)=>
@@ -71,7 +72,7 @@ class App extends Component {
             </div>
           </div>
           <div style={divStyle}>
-            <div><h4>Teachers</h4></div>
+            <div style={{ background: "yellow"}}><h4>Teachers</h4></div>
             <div>
               <ul>
                   {this.state.teachers.map((tec)=>
@@ -83,12 +84,12 @@ class App extends Component {
             </div>
           </div>
           <div style={divStyle}>
-            <div><h4>Courses</h4></div>
+            <div style={{ background: "yellow"}}><h4>Courses</h4></div>
             <div>
               <ul>
                   {this.state.courses.map((crs)=>
                       <li style={{ listStyleType: "none", textAlign: 'center'}} key={crs.Id}>
-                          <Course studentItem={crs} />
+                          <Course courseItem={crs} />
                       </li>
                       )}
               </ul>

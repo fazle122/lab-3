@@ -6,7 +6,7 @@ class Course extends React.Component{
     }
 
     render(){
-        let course = this.props.studentItem;
+        let course = this.props.courseItem;
         return(
             <div>
                 <div>
