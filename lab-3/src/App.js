@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Header from './Common/Header';
 import Student from './Student/Student';
 import Teacher from './Teacher/Teacher';
@@ -9,16 +8,14 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      student : { name : ""},
       students:[],
-      teacher: { name : ""},
       teachers: [],
-      course:{ name:""},
       courses:[]
     }
   }
 
   componentWillMount(){
+
     this.setState({students:[
         {Id:"1",name : "aslam", address: "mirpur"},
         {Id:"2", name : "zobbar", address: "shamoly"},
@@ -29,15 +26,16 @@ class App extends Component {
       {Id:"1",name : "mr. zubayer", district: "dhaka"},
       {Id:"2", name : "mr. samsul", district: "chaittagong"},
       {Id:"3", name : "mr. kader", district: "cumilla"},
-  ]});
+    ]});
 
-  this.setState({courses:[
-    {Id:"1",name : "math", credit: "2"},
-    {Id:"2", name : "physics", credit: "3"},
-    {Id:"3", name : "english", credit: "2"},
-]});
+    this.setState({courses:[
+      {Id:"1",name : "math", credit: "2"},
+      {Id:"2", name : "physics", credit: "3"},
+      {Id:"3", name : "english", credit: "2"},
+    ]});
 
   }
+
   render() {
     let appStyle = {
       display: 'flex', 
@@ -66,6 +64,7 @@ class App extends Component {
           <div style={divStyle}>
             <div style={{ background: "#ffdab3"}}><h4>Students</h4></div>
             <div>
+              {/* <Student /> */}
               <ul>
                   {this.state.students.map((std)=>
                       <li style={{ listStyleType: "none", textAlign: 'center'}} key={std.Id}>
@@ -98,9 +97,7 @@ class App extends Component {
                       )}
               </ul>
             </div>
-          </div>
-          
-          
+          </div>         
           
         </div>
       </div>
